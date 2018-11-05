@@ -70,3 +70,28 @@ nav{
 	margin-top: 10px;
 	width: 150px;
 }
+
+#panel{
+	position: relative;
+	width: 50%;
+	padding: 10px;
+	background-color: brown;
+}
+
+#panel img{
+	display: block;
+	margin: 0 auto;
+}
+
+#close{
+	float: right;
+	cursor: pointer;
+}
+
+#content{
+	display: block;
+	position: absolute;
+	top: 140px;
+	width: 50%;
+	margin: 0 auto;
+}
