@@ -8,15 +8,27 @@ $(document).ready(function(){
 
 	setTimeout(function(){
 		place();
-		console.log('placed');
 	}, 1000);
+
+	//tooltips
+	$('.location').hover(function(event){
+		event.preventDefault();
+		var titleText = $(this).attr('title');
+		$(this).data('tipText', titleText).removeAttr();
+		$('<p class="tootTip"></p>').text(titleText).appendTo('body').css({
+			'top': (event.pageY - 10) + 'px',
+			'left': (event.pageX + 20) + 'px',
+		});
+	});
 
 	$('#close').click(function(){
 		$('#panel').fadeOut('fast');
 	});
 
-	$('body:not(#open)').click(function(event){
-		if(event.target.id !== 'open'){
+	//find better way to do this, right now it sucks but I'm lazy
+	$('body').click(function(event){
+		if(event.target.id !== 'open' && event.target.id !== 'logins' && event.target.id !== 'username' && 
+			event.target.id !== 'password' && event.target.id !== 'button'){
 			if($('#logins').is(':visible')){
 				$('#logins').slideUp();
 				visible = false;
@@ -36,15 +48,24 @@ $(document).ready(function(){
 			loggedIn = false;
 		}
 	});
-
+/*
 	$('#button').click(function(){
-		$('#logins').slideUp();
-		visible = false;
-		setTimeout(function(){
-			$('#open').html('Logout');
-			loggedIn = true;
-		}, 500);
+		console.log('username = ' + $('#username').val());
+		console.log('password = ' + $('#password').val())
+		if($('#username').val() == ''){
+			$('#usernameError').html('You need to enter a username');
+		} else if($('#password').val() == ''){
+ 			$('#passwordError').html('You need to enter a password');
+		} else{
+			$('#logins').slideUp();
+			visible = false;
+			setTimeout(function(){
+				$('#open').html('Logout');
+				loggedIn = true;
+			}, 500);
+		}
 	});
+*/
 });
 
 function place(){

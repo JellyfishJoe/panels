@@ -22,16 +22,18 @@
 			<li><a href="#">Link to nowhere Taitree</a></li>
 		</ul>
 
-		<div id="login">
+		<div id="login" class="login">
 			<a id="open" href="#">Login</a>
 			<form id="logins" action="">
 				<div>
-					<label for="username">Username:</label>
+					<label id="username" for="username">Username:</label>
 					<input type="text" id="username" name="username">
+					<p id="usernameError"></p>
 				</div>
-				<div>
-					<label for="password">Password:</label>
+				<div id="parent">
+					<label id="password" for="password">Password:</label>
 					<input type="password" id="password" name="password">
+					<p id="passwordError"></p>
 				</div>
 				<div>
 					<button id="button" type="button">Log In</button>
@@ -42,11 +44,11 @@
 
 	<div id="panel">
 		<h2>Avocado Toast<span id="close">X</span></h2>
-		<p> This is a story of avocado toast. It's toast with avocado on it. Why are you looking up a recipe? The recipe is literally in the name of the dish. Are you stupid? You don't deserve to consome avocado toast you neanderthal.</p>
+		<p>This is a story of avocado toast. It's toast with avocado on it. Why are you looking up a recipe? The recipe is literally in the name of the dish. Are you stupid? You don't deserve to consome avocado toast you neanderthal.</p>
 	</div>
 
 	<div id="content">
-		<p><strong>Caprese Avocado Toast</strong></br>fjdkalflasjk</p>
+		<p><strong>Caprese Avocado <a href="#" class="location" title="Toasted">Toast</a></strong></br>fjdkalflasjk</p>
 
 		<p><strong>BAT Avocado Toast</strong></br>fjkl;sdafjkls;fjklsd;jklsfda;jkl</p>
 
